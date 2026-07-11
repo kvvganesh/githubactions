@@ -1,0 +1,25 @@
+name: Runner Demo
+
+on:
+  puhs:
+
+jobs:
+  runner:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: printing the system information
+        run: uname -a
+      
+      - name: printing the user
+        run: whoami
+      
+      - name: printing the current working directory
+        run: pwd
+
+      - name: printing the date
+        run: date
+
+      - name: print message
+        run: echo "Hello from the github runner!"
+        
