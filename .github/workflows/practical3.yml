@@ -1,0 +1,27 @@
+name: checkout demo
+
+on:
+  push:
+  
+
+
+jobs:
+  checkoutdemo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: before checkout
+        run: |
+          echo "before checkout"
+          pwd
+          echo " "
+          echo "files: "
+          ls -la
+      - name: checkout
+        uses: actions/checkout@v4
+      - name: after checkout
+        run: |
+          echo "after checkout"
+          pwd
+          echo " "
+          echo "files: "
+          ls -la
