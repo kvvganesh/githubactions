@@ -1,0 +1,22 @@
+name: Working On Multiple Events
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  events-demo:
+    runs-on: ubuntu-latest
+  
+    steps:
+    - name: Display event 
+      run: echo "Triggered by ${{github.event_name}}"
+    - name: Display Repository
+      run: echo"Repository=${{github.repository}}
+    - name: Display the Branch
+      run: echo "Branch= ${{github.ref_name}}"
+    - name: Display actor
+      run: echo "Triggered by user= ${{github.actor}}"
+
+ 
