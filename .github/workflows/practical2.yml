@@ -1,7 +1,7 @@
 name: Runner Demo
 
 on:
-  push:
+  workflow_dispatch:
 
 jobs:
   runner:
