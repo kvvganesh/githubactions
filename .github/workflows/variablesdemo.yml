@@ -1,0 +1,23 @@
+name: Variables Demo
+on:
+  workflow_dispatch:
+env:
+  COMPANY: OpenAI
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+    env:
+      TEAM: Devops
+    steps:
+      - name: step1
+        env:
+          NAME: HarryPotter
+        run: |
+            echo "Company= $COMPANY"
+            echo " Team= $TEAM"
+            echo "Name= $NAME"
+      - name: step2
+        run: |
+            echo "Company= $COMPANY"
+            echo "Team= $TEAM"
+            echo "Name= $NAME"
