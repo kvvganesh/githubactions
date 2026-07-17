@@ -1,7 +1,7 @@
 name: Working On Multiple Events
 
 on:
-  push:
+
   pull_request:
   workflow_dispatch:
 
