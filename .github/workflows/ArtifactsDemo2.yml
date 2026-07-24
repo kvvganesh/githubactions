@@ -31,6 +31,10 @@ jobs:
       
       - name: Display the contents
         run: |
+            pwd
+            ls -l
+            cd exam-results
+            ls -l
             echo "Student name: "
             cat exam-results/student.txt
             echo "Marks: "
