@@ -18,7 +18,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name:  exam-results
-          path: exam-result/*    #only uploading the files not the directory
+          path: exam-result
 
   verify:
     needs: build
