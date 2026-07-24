@@ -1,6 +1,6 @@
 name: Cache Demo
 on:
-  workflow-dispatch:
+  workflow_dispatch:
 
 jobs:
   cache-demo:
