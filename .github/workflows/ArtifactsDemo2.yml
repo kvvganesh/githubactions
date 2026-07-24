@@ -36,6 +36,6 @@ jobs:
             cd exam-results
             ls -l
             echo "Student name: "
-            cat exam-results/student.txt
+            cat student.txt
             echo "Marks: "
-            cat exam-results/marks.txt
+            cat marks.txt
