@@ -1,0 +1,24 @@
+name: Step Outputs Demo
+
+on:
+  workflow_dispatch:
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Storing username
+        id: Name
+        run: |
+          echo "username=KvvGanesh" >> $GITHUB_OUTPUT
+    
+      - name: Storing Current Date and Time
+        id: dateandtime
+        run: |
+            current=$(date +%Y%m%d-%H%M%S)
+            echo "builddate=$current" >> $GITHUB_OUTPUT
+      - name: Display User and Date
+        run: |
+            echo "User: ${{steps.Name.outputs.username}}"
+            echo "Date and Time: ${{steps.dateandtime.outputs.builddate}}"
