@@ -1,0 +1,25 @@
+name : Jobs Output Demo
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    outputs:
+      versions: ${{steps.create.outputs.version}}
+    
+    steps:
+      - name: creating the output
+        id: create
+        run: |
+            echo "version=v1.0.0" >> $GITHUB_OUTPUT
+    
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: showing the version 
+        run: |
+            echo "version=${{needs.build.outputs.versions}}"
+
