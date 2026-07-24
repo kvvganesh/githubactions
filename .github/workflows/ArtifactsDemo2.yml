@@ -1,0 +1,37 @@
+name: Artifacts Demo 2
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: create the student file amd marks file
+        run: |
+            mkdir exam-result
+            cd exam-result
+            echo "Kvv Ganesh" > student.txt
+            echo "99" >marks.txt
+      
+      - name: upload the files to artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name:  exam-results
+          path: exam-result/*    #only uploading the files not the directory
+
+  verify:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Downloading the artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: exam-results
+      
+      - name: Display the contents
+        run: |
+            echo "Student name: "
+            cat exam-results/student.txt
+            echo "Marks: "
+            cat exam-results/marks.txt
