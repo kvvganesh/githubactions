@@ -3,7 +3,7 @@ name: Calling Workflow
 on:
   workflow_dispatch:
 
-job:
+jobs:
   build:
     uses: ./.github/workflows/ReusableWorkflow.yml
     
