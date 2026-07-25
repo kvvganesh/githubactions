@@ -1,0 +1,9 @@
+name: Calling Workflow
+
+on:
+  workflow_dispatch:
+
+job:
+  build:
+    uses: ./.github/workflows/ReusableWorkflow.yml
+    
